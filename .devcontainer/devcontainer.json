@@ -1,0 +1,10 @@
+{
+  "name": "Next.js Dev (WSL)",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "bradlc.vscode-tailwindcss"]
+    }
+  },
+  "forwardPorts": [3000]
+}
