@@ -1,5 +1,7 @@
 import { fetchIproRange } from "../serverAction/ipro-action";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   const result = await fetchIproRange();
 

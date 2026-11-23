@@ -29,18 +29,21 @@ const Counter = () => {
       <h2 className="text-xl font-bold">Count: {state.count}</h2>
       <div className="flex gap-2">
         <button
+          type="button"
           onClick={() => dispatch({ type: "increment" })}
           className="px-3 py-1 bg-black text-white rounded"
         >
           +
         </button>
         <button
+          type="button"
           onClick={() => dispatch({ type: "decrement" })}
           className="px-3 py-1 bg-red-500 text-white rounded"
         >
           -
         </button>
         <button
+          type="button"
           onClick={() => dispatch({ type: "reset" })}
           className="px-3 py-1 bg-gray-500 text-white rounded"
         >

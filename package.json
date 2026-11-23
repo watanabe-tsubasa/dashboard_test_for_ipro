@@ -3,24 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --hostname 127.0.0.1",
     "build": "next build --turbopack",
-    "start": "next start",
+    "start": "next start --hostname 127.0.0.1",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "probe": "node --experimental-strip-types src/collector/cli.mts probe",
+    "fetch": "node --experimental-strip-types src/collector/cli.mts fetch",
+    "test": "node --experimental-strip-types --test src/collector/collector.test.mts src/collector/parse/*.test.mts src/collector/d1/*.test.mts src/collector/r2/*.test.mts src/collector/admin/*.test.mts",
+    "parse": "node --experimental-strip-types src/collector/parse/cli.mts",
+    "d1:migrate": "node --experimental-strip-types src/collector/d1/cli.mts migrate",
+    "d1:import": "node --experimental-strip-types src/collector/d1/cli.mts import",
+    "backfill": "node --experimental-strip-types src/collector/d1/cli.mts backfill",
+    "sync": "node --experimental-strip-types src/collector/d1/cli.mts sync",
+    "r2:thumbnail": "node --experimental-strip-types src/collector/r2/cli.mts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "3.1175.0",
+    "next": "15.5.6",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.6"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@biomejs/biome": "2.2.0",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4",
-    "@biomejs/biome": "2.2.0"
+    "typescript": "^5"
   }
 }
